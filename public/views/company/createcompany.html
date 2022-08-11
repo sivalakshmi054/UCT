@@ -1,0 +1,307 @@
+
+    <section class="dataContainer">
+
+        <div class="dataSection">
+            <form >
+                <div class="dashboardGridContainer">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1>Add Company</h1>
+                        </div>
+                        <div class="col-sm-6 d-flex justify-content-end">
+                            <input type="submit" value="Save" ng-click="Company_Add_Edit()" class="btn btn-primary">
+                        </div>
+                    </div>
+                    <div class="row mb-3 mt-3">
+                        <div class="col-sm-12">
+                            <ul class="tabs">
+                                <li>
+                                    <a class="activeTab" href="javascript:;" data-target="basic">Basic Info</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-target="uin">Unique Identification</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-target="contact">Contact Details</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-target="plan">Plan Details</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row" data-destination="basic">
+                        <!-- <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Logo</label>
+                                <div class="uploadProfile">
+                                    <input type="file" ng-model="comapany_logo" class="form-control" accept="image/x-png,image/gif,image/jpeg">
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Name <span style="color:red;">*</span> </label>
+                                <input type="text" ng-model="company_name" class="form-control" placeholder="Company Name" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Address 1 <span style="color:red;">*</span> </label>
+                                <input type="text" ng-model="company_address" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Address 2</label>
+                                <input type="text" ng-model="company_address1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Address 3</label>
+                                <input type="text" ng-model="company_address2" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Country <span style="color:red;">*</span> </label>
+                                <select ng-model="Country" class="form-control" ng-required="true" ng-change="StateBasedOnCountry()">
+                                    <option value="" selected>Select </option> 
+                                    <option ng-repeat="sel in CountryList" ng-selected="CountryList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>State <span style="color:red;">*</span> </label>
+                                <select ng-model="State" class="form-control" ng-required="true" ng-change="CityBasedOnState()">
+                                    <option value="" selected>Select </option>
+                                    <option ng-repeat="sel in StateList" ng-selected="StateList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>City <span style="color:red;">*</span> </label>
+                                <select ng-model="City" class="form-control" ng-required="true">
+                                    <option value="" selected>Select </option>
+                                    <option ng-repeat="sel in CityList" ng-selected="CityList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Pincode <span style="color:red;">*</span> </label>
+                                <input type="text" ng-model="company_pincode" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Mobile <span style="color:red;">*</span> </label>
+                                <input type="text" ng-model="company_mob" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Email <span style="color:red;">*</span> </label>
+                                <input type="text" ng-model="company_email" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Extn</label>
+                                <input type="number" ng-model="company_extn" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row" data-destination="uin" style="display: none;">
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>CIN</label>
+                                <input ng-model="company_cin" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>GST</label>
+                                <input ng-model="company_gst" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>PAN</label>
+                                <input type="text" ng-model="company_pan" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>TAN</label>
+                                <input ng-model="company_tan" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label for="date">Registration Date <span style="color:red;">*</span> </label>
+                                <input type="date" ng-model="company_regdate" class="form-control" required="required">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="row" data-destination="contact" style="display: none;">
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Website URL</label>
+                                <input type="text" ng-model="company_website" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Board Number</label>
+                                <input type="text" ng-model="company_board_number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Contact Person Primary</label>
+                                <input type="text" ng-model="company_person_name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Contact Person Primary Mobile</label>
+                                <input type="text" ng-model="company_person_mob" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Contact Person Primary Email</label>
+                                <input type="text" ng-model="company_person_email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Contact Person Primary Extn</label>
+                                <input type="text" ng-model="company_person_extn" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Talent Acquisition Admin Name</label>
+                                <input type="text" ng-model="company_hr_name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Talent Acquisition Admin Mobile</label>
+                                <input type="text" ng-model="company_hr_mob" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Talent Acquisition Admin Email</label>
+                                <input type="text" ng-model="company_hr_email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Talent Acquisition Admin extn</label>
+                                <input type="text" ng-model="company_hr_extn" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Billing Manager Name</label>
+                                <input type="text" ng-model="company_manager_name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Billing Manager Mobile</label>
+                                <input type="text" ng-model="company_manager_mob" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Billing Manager Email</label>
+                                <input type="text" ng-model="company_manager_email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Billing Manager Extn</label>
+                                <input type="text" ng-model="company_manager_extn" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Company Category</label>
+                                <input type="text" ng-model="company_cat" class="form-control">
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-sm-4">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" ng-model="company_isactive" class="custom-control-input" id="switch1">
+                                <label class="custom-control-label" for="switch1">Active</label>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="row" data-destination="plan" style="display: none;">
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Plan</label>
+                                <select ng-model="plan" class="form-control" ng-required="true">
+                                    <option value="">Select </option>
+                                    <option ng-repeat="sel in PlanList" ng-selected="Plan==sel.Id" value="{{sel.Id}}">{{sel.PackageName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="col-sm-2">
+                            <div class="inputGroup">
+                                <label>Registration Date</label>
+                                <input type="text" class="form-control date" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div> -->
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Subscription Start Date</label>
+                                <input type="date" ng-model="subs_start_date" class="form-control" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Subscription End Date</label>
+                                <input type="date" ng-model="subs_end_date" class="form-control" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="inputGroup">
+                                <label>Subscription Notes</label>
+                                <textarea ng-model="subs_plan_notes" class="form-control" placeholder="Notes" cols="10" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        $(function () {
+            $('.tabs li a').click(function () {
+            $('.tabs li a').removeClass('activeTab');
+            $(this).addClass('activeTab');
+            $('[data-destination]').hide();
+            $(`[data-destination="${$(this).attr('data-target')}"]`).show();
+
+
+
+    })
+    })
+    </script>

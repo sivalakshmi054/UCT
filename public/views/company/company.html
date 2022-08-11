@@ -1,0 +1,314 @@
+
+    <section class="dataContainer">
+
+        <div class="dataSection" ng-init="CompanyDetails()">
+
+            <div class="dashboardGridContainer">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Company Details</h1>
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-end">
+                        <a href="javascript:;" ng-click="edit_company(Id)" class="btn btn-primary mr-2"><span>Edit</span> </a>
+                        <a href="AdminHome#/CompanyList" class="btn btn-warning"><span>Cancel</span> </a>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <div class="col-sm-12">
+                        <ul class="tabs">
+                            <li>
+                                <a class="activeTab" href="javascript:;" data-target="basic">Basic Info</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="uin">Unique Identification</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="contact">Contact Details</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="plan">Plan Details</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" data-destination="basic">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Name</label>
+                            <div class="form-control">{{company_name}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address 1</label>
+                            <!-- <input type="text" ng-model="company_address" class="form-control" ng-init="company_address=''"> -->
+                            <div class="form-control">{{company_address}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address 2</label>
+                            <!-- <input type="text" ng-model="company_address1" ng-init="company_address1=''" class="form-control"> -->
+                            <div class="form-control">{{company_address1}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address 3</label>
+                            <!-- <input type="text" ng-model="company_address2" ng-init="company_address2=''" class="form-control"> -->
+                            <div class="form-control">{{company_address2}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Country</label>
+                            <div class="form-control">{{CountryName}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>State</label>
+                            <div class="form-control">{{StateName}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>City</label>
+                            <div class="form-control">{{CityName}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Pincode</label>
+                            <div class="form-control">{{company_pincode}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Mobile</label>
+                            <!-- <input type="text" ng-model="company_mob" ng-init="company_mob=''" class="form-control"> -->
+                            <div class="form-control">{{company_mob}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Email</label>
+                            <!-- <input type="text" ng-model="company_email" ng-init="company_email=''" class="form-control"> -->
+                            <div class="form-control">{{company_email}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Extn</label>
+                            <!-- <input type="text" ng-model="company_extn" ng-init="company_extn=''" class="form-control"> -->
+                            <div class="form-control">{{company_extn}}</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" data-destination="uin" style="display: none;">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>CIN</label>
+                            <!-- <input ng-model="company_cin" type="text" ng-init="company_cin=''" class="form-control"> -->
+                            <div class="form-control">{{company_cin}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>GST</label>
+                            <!-- <input ng-model="company_gst" type="text" ng-init="company_gst=''" class="form-control"> -->
+                            <div class="form-control">{{company_gst}}</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>PAN</label>
+                            <!-- <input type="text" ng-model="" ng-init="company_pan=''" class="form-control"> -->
+                            <div class="form-control">{{company_pan}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>TAN</label>
+                            <!-- <input ng-model="company_tan" type="text" ng-init="company_tan=''" class="form-control"> -->
+                            <div class="form-control">{{company_tan}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label for="date">Registration Date</label>
+                            <!-- <input type="text" ng-model="company_regdate" ng-init="company_regdate=''" class="form-control"> -->
+                            <div class="form-control">{{company_regdate | date:"dd-MM-yyyy"}}</div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="row" data-destination="contact" style="display: none;">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Website URL</label>
+                            <!-- <input type="text" ng-model="company_website"  ng-init="company_website=''" class="form-control"> -->
+                            <div class="form-control">{{company_website}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Board Number</label>
+                            <!-- <input type="text" ng-model="company_board_number" ng-init="company_board_number=''" class="form-control"> -->
+                            <div class="form-control">{{company_board_number}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Contact Person Primary</label>
+                            <!-- <input type="text" ng-model="company_person_name" ng-init="company_person_name=''" class="form-control"> -->
+                            <div class="form-control">{{company_person_name}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Contact Person Primary Mobile</label>
+                            <!-- <input type="text" ng-model="company_person_mob" ng-init="company_person_mob=''" class="form-control"> -->
+                            <div class="form-control">{{company_person_mob}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Contact Person Primary Email</label>
+                            <!-- <input type="text" ng-model="company_person_email" ng-init="company_person_email=''"class="form-control"> -->
+                            <div class="form-control">{{company_person_email}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Contact Person Primary Extn</label>
+                            <!-- <input type="text" ng-model="company_person_extn" ng-init="company_person_extn=''" class="form-control"> -->
+                            <div class="form-control">{{company_person_extn}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company HR Manager Name</label>
+                            <!-- <input type="text" ng-model="company_hr_name" ng-init="company_hr_name=''" class="form-control"> -->
+                            <div class="form-control">{{company_hr_name}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company HR Manager Mobile</label>
+                            <!-- <input type="text" ng-model="company_hr_mob" ng-init="company_hr_mob=''" class="form-control"> -->
+                            <div class="form-control">{{company_hr_mob}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company HR Manager Email</label>
+                            <!-- <input type="text" ng-model="company_hr_email" ng-init="company_hr_email=''" class="form-control"> -->
+                            <div class="form-control">{{company_hr_email}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company HR Manager extn</label>
+                            <!-- <input type="text" ng-model="company_hr_extn" ng-init="company_hr_extn=''" class="form-control"> -->
+                            <div class="form-control">{{company_hr_extn}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Billing Manager Name</label>
+                            <!-- <input type="text" ng-model="company_manager_name" ng-init="company_manager_name=''" class="form-control"> -->
+                            <div class="form-control">{{company_manager_name}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Billing Manager Mobile</label>
+                            <!-- <input type="text" ng-model="company_manager_mob" ng-init="company_manager_mob=''" class="form-control"> -->
+                            <div class="form-control">{{company_manager_mob}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Billing Manager Email</label>
+                            <!-- <input type="text" ng-model="company_manager_email" ng-init="company_manager_email=''" class="form-control"> -->
+                            <div class="form-control">{{company_manager_email}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Billing Manager Extn</label>
+                            <!-- <input type="text" ng-model="company_manager_extn" ng-init="company_manager_extn=''" class="form-control"> -->
+                            <div class="form-control">{{company_manager_extn}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Category</label>
+                            <!-- <input type="text" ng-model="company_cat" ng-init="company_cat=''" class="form-control"> -->
+                            <div class="form-control">{{company_cat}}</div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-sm-4">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" ng-model="company_isactive" class="custom-control-input" id="switch1">
+                            <label class="custom-control-label" for="switch1">Active</label>
+                        </div>
+                    </div> -->
+
+                </div>
+                <div class="row" data-destination="plan" style="display: none;">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Plan</label>
+                            <div class="form-control">{{PlanName}}</div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-2">
+                        <div class="inputGroup">
+                            <label>Registration Date</label>
+                            <input type="text" class="form-control date" placeholder="MM/DD/YYYY">
+                        </div>
+                    </div> -->
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Subscription Start Date</label>
+                            <!-- <input type="text" ng-model="subs_start_date" ng-init="subs_start_date=''" class="form-control" placeholder="MM/DD/YYYY"> -->
+                            <div class="form-control">{{subs_start_date | date:"dd-MM-yyyy"}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Subscription End Date</label>
+                            <!-- <input type="text" ng-model="subs_end_date" ng-init="subs_end_date=''" class="form-control" placeholder="MM/DD/YYYY"> -->
+                            <div class="form-control">{{subs_end_date | date:"dd-MM-yyyy"}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Subscription Notes</label>
+                            <!-- <textarea ng-model="subs_plan_notes" ng-init="subs_plan_notes=''" class="form-control" placeholder="Notes" cols="10" rows="1"></textarea> -->
+                            <div class="form-control">{{subs_plan_notes}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script>
+        $(function () {
+            $('.tabs li a').click(function () {
+            $('.tabs li a').removeClass('activeTab');
+            $(this).addClass('activeTab');
+            $('[data-destination]').hide();
+            $(`[data-destination="${$(this).attr('data-target')}"]`).show();
+
+
+
+    })
+    })
+    </script>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header class="primaryHeader">
+        <h1><img src="images/logo.png" alt=""></h1>
+        <a href="#" class="navIcon" data-toggle="tooltip" title="Show and hide menu" data-placement="bottom">
+            <img src="images/nav.png">
+        </a>
+        <a href="#" class="notificationIcon">
+            <img src="images/menuIcons/bell_notification.svg">
+            <span>10</span>
+        </a>
+
+        <div class="profileImage">
+            <img src="images/profile.jpg">
+        </div>
+        <p>Yogeswaran Veerapathiran
+            <span>Admin</span>
+        </p>
+    </header>
+    <section class="navigation">
+        <ul>
+            <li>
+                <a href="dashboard.html" class="activeMenu">
+                    <img src="images/menuIcons/dashboard.svg">
+                    <span class="menuText">Dashboard</span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="hasChild">
+                    <img src="images/menuIcons/dashboard.svg">
+                    <span class="menuText">Company</span>
+                    <span class="icon">
+                        <img src="images/leftArrow.png">
+                    </span>
+                </a>
+                <ul class="childMenu">
+                    <li>
+                        <a href="companylist.html">
+                            <span class="menuText">Company List</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="createcompany.html">
+                            <span class="menuText">Add Company</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="companymaster.html">
+                            <span class="menuText">Masters</span>
+
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="settings.html">
+                    <img src="images/menuIcons/settings.svg">
+                    <span class="menuText">Settings</span>
+
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="dataContainer">
+
+        <div class="dataSection">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="#" class="dash d1">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <img src="images/dashobardIcon1.svg" alt="">
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <span>See More Details</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4 align-items-end">
+                            <div class="col-sm-12">
+                                <p>199</p>
+                                <p>Company</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#" class="dash d2">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <img src="images/dashobardIcon2.svg" alt="">
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <span>See More Details</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-sm-12">
+                                <p>120</p>
+                                <p>Today plan expired company</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="dash d3">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <img src="images/dashobardIcon3.svg" alt="">
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <span>See More Details</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-sm-12">
+                                <p>88</p>
+                                <p>New and free plan company</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="dashboardGridContainer mt-5">
+                <h1>Companies</h1>
+                <div id="scrollTable" style="max-height:300px;">
+                    <table class="themeTable">
+                        <tr>
+                            <th width="20%">Name</th>
+                            <th width="15%">City</th>
+                            <th width="15%">PAN No.</th>
+
+                            <th width="15%">Mobile Number</th>
+                            <th width="20%">Email Id</th>
+                            <th width="15%">Action</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="company.html">Q2 Soft</a>
+                            </td>
+                            <td>Bangalore</td>
+
+                            <td>
+                                AIFPY6767Q
+                            </td>
+                            <td>95002620XX</td>
+                            <td>
+                                admin@q2.com
+                            </td>
+                            <td>
+                                <a href="companyedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a>
+                                <a href="company.html"><img src="images/view.svg" alt=""></a>
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        $(function () {
+            $('#filter button').click(function () {
+                $('.btn-primary').removeClass('btn-primary');
+                $(this).removeClass('btn-default').addClass('btn-primary');
+            })
+        });
+    </script>
+</body>
+
+</html>

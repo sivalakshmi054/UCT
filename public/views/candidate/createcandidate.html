@@ -1,0 +1,313 @@
+    <section class="dataContainer">
+
+        <div class="dataSection">
+
+            <div class="dashboardGridContainer">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Add Candidate</h1>
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-end">
+                        <a ng-click="Add_Candidate()" class="btn btn-primary"><span>Save</span> </a>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <div class="col-sm-12">
+                        <ul class="tabs">
+                            <li>
+                                <a class="activeTab" href="javascript:;" data-target="basic">Basic Info</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="contact">Contact Details</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="skill">Skills</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="offers">Offer Details</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" data-destination="basic">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>First Name <span style="color:red;">*</span></label>
+                            <input type="text" ng-model="FirstName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Last Name</label>
+                            <input type="text" ng-model="LastName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Pan Number <span style="color:red;">*</span></label>
+                            <input type="text" ng-model="PAN" style="text-transform:uppercase" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Adhar Number</label>
+                            <input type="text" ng-model="Aadhar" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>DOB <span style="color:red;">*</span></label>
+                            <input type="date" ng-model="DOB" ng-change="calculateAge()" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Age </label>
+                            <div class="form-control" ng-init="calculateAge()">{{currage}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 align-self-center">
+                        <div class="inputGroup">
+                            <label class="mr-3">Gender</label>
+                            <div class="form-check-inline">
+                                <label class="form-check-label" for="male">
+                                    <input type="radio" class="form-check-input" id="male" ng-model="Gender"
+                                        value="1" checked>Male
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label" for="female">
+                                    <input type="radio" class="form-check-input" id="female" ng-model="Gender"
+                                        value="2">Female
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label" for="others">
+                                    <input type="radio" class="form-check-input" id="others" ng-model="Gender"
+                                        value="3">Others
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Mobile-1 <span style="color:red;">*</span> </label>
+                            <input type="text" ng-model="Mobile1" class="form-control" maxlength="10" pattern="\d{10}">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Mobile-2 </label>
+                            <input type="text" ng-model="Mobile2" class="form-control" maxlength="10" pattern="\d{10}">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Email Id - 1 <span style="color:red;">*</span></label>
+                            <input type="email" ng-model="EmailId1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Email Id - 2</label>
+                            <input type="email" ng-model="EmailId2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Linked In Profile URL</label>
+                            <input type="text" ng-model="LinkedIn" class="form-control">
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="switch1">
+                            <label class="custom-control-label" for="switch1">Active</label>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="row" data-destination="contact" style="display: none;">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address Line 1</label>
+                            <input type="text" ng-model="Address1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address Line 2</label>
+                            <input type="text" ng-model="Address2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address Line 3</label>
+                            <input type="text" ng-model="Address3" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Country </label>
+                            <select ng-model="Country" class="form-control" ng-change="StateBasedOnCountry()">
+                                <option value="" selected>Select </option> 
+                                <option ng-repeat="sel in CountryList" ng-selected="CountryList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>State </label>
+                            <select ng-model="State" class="form-control" ng-change="CityBasedOnState()">
+                                <option value="" selected>Select </option>
+                                <option ng-repeat="sel in StateList" ng-selected="StateList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>City </label>
+                            <select ng-model="City" class="form-control">
+                                <option value="" selected>Select </option>
+                                <option ng-repeat="sel in CityList" ng-selected="CityList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Pincode</label>
+                            <input type="text" ng-model="Pincode" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-destination="skill" style="display: none;">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Skills</label>
+                            <input type="text" ng-model="Skills" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Current Company <span style="color:red;">*</span></label>
+                            <select ng-model="CurrentCompany" class="form-control">
+                                <option value="" selected>Select Company </option>
+                                <option ng-repeat="sel in CompanyAllList" ng-selected="CompanyALlList==sel.Id" value="{{sel.Id}}">{{sel.Name}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Current Location</label>
+                            <input type="text" ng-model="CurrentLocation" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Current Package</label>
+                            <input type="text" ng-model="CurrentPackage" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Reason for change</label>
+                            <input type="text" ng-model="ReasonforChange" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Preferred City 1</label>
+                            <input type="text" ng-model="PreferredCity1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Preferred City 2</label>
+                            <input type="text" ng-model="PreferredCity2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Preferred City 3</label>
+                            <input type="text" ng-model="PreferredCity3" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" data-destination="offers" style="display: none;">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company Name <span style="color:red;">*</span></label>
+                            <input type="text" ng-model="Id" value="{{Id}}" class="form-control" hidden>
+                            <select ng-model="CompanyName" class="form-control">
+                                <option value="" selected>Select Company </option>
+                                <option ng-repeat="sel in CompanyList" ng-selected="CompanyList==sel.Id" value="{{sel.Id}}">{{sel.Name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Location </label>
+                            <input type="text" ng-model="Location" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Position</label>
+                            <input type="text" ng-model="Position" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>CTC Expected<span style="color:red;">*</span></label>
+                            <input type="text" ng-model="CTCexpectedasked" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Offer Date<span style="color:red;">*</span></label>
+                            <input type="date" ng-model="OfferDate" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Expected Start Date<span style="color:red;">*</span></label>
+                            <input type="date" ng-model="ExpectedStartDate" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Probability of Joining</label>
+                            <input type="text" ng-model="Probabilityofjoining" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>HR Prediction</label>
+                            <input type="text" ng-model="HRPrediction" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(function () {
+            $('.tabs li a').click(function () {
+            $('.tabs li a').removeClass('activeTab');
+            $(this).addClass('activeTab');
+            $('[data-destination]').hide();
+            $(`[data-destination="${$(this).attr('data-target')}"]`).show();
+
+
+
+    })
+    })
+    </script>

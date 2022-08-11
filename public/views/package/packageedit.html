@@ -1,0 +1,77 @@
+    <section class="dataContainer">
+
+    <div class="dataSection" ng-init="PackageDetails()">
+        <form>
+            <div class="dashboardGridContainer">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Edit Package</h1>
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-end">
+                        <a href="javascript:" ng-click="Package_Add_Edit()" class="btn btn-primary mr-2"><span>Save</span> </a>
+                        <a href="AdminHome#/PackageList" class="btn btn-warning"><span>Cancel</span> </a>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <div class="col-sm-12">
+                        <ul class="tabs">
+                            <li>
+                                <a class="activeTab" href="javascript:;" data-target="basic">Package Details</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" data-destination="basic">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Pacakge Name <span style="color:red;">*</span> </label>
+                            <input type="text" ng-model="PackageName" class="form-control" placeholder="Package Name" required="required">
+                            <input type="text" ng-model="Id" ng-init="Id=''" class="form-control" hidden>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Number of Users <span style="color:red;">*</span> </label>
+                            <input type="text" ng-model="Userscount" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Number of Searches <span style="color:red;">*</span></label>
+                            <input type="text" ng-model="NumberofSearches" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Base Cost <span style="color:red;">*</span></label>
+                            <input type="text" ng-model="BaseCost" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Allow Multiple Logins</label>
+                            <input type="text" ng-model="BaseCost" class="form-control">
+                        </div>
+                    </div> -->
+                    
+
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('.tabs li a').click(function () {
+        $('.tabs li a').removeClass('activeTab');
+        $(this).addClass('activeTab');
+        $('[data-destination]').hide();
+        $(`[data-destination="${$(this).attr('data-target')}"]`).show();
+
+
+
+})
+})
+</script>

@@ -1,0 +1,33 @@
+ $scope.GetSkillName = function (skill) {
+             var skillId = skill;
+             var skill_Name = "";
+             skill_Name = $.grep($scope.getSkill, function (skill) {
+                 return skill.Id == skillId;
+             })[0].Technical_Skill;
+
+             return skill_Name;
+         }
+
+
+ var TSDuplicate = 0;
+             var DuplicateSkills = '';
+             angular.forEach($scope.AddTechnical_Skill, function (value1, index1) {
+                 angular.forEach($scope.AddTechnical_Skill, function (value2, index2) {
+
+                     if (index1 > index2 && value1.Tec_Skill_Id == value2.Tec_Skill_Id) {
+                         TSDuplicate = 1;
+                         DuplicateSkills = DuplicateSkills + $scope.GetSkillName(value2.Tec_Skill_Id) + ',';
+                        
+                     }
+                     if (index1 != null && value2.Tec_Skill_Id == null && $scope.AddTechnical_Skill.length > 1) {
+                         alert("Please select Technical Skills");
+                         return Tec_Skill_Id;
+
+                     }
+                    
+                 });
+             });
+
+
+
+   <select class="form-control" ng-model="row.Tec_Skill_Id" ng-options="skill.Id as skill.Technical_Skill for skill in getSkill">

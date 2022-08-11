@@ -1,0 +1,122 @@
+<section class="dataContainer">
+
+    <div class="dataSection">
+        <form id="Myform">
+            <div class="dashboardGridContainer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="mb-4">Candidate Search</h1>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Candidate Name <span style="color: red;">*</span></label>
+                            <input type="text" id="Name" ng-model="Name" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Mobile <span style="color: red;">*</span></label>
+                            <input type="text" ng-model="Mobile" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Email Id <span style="color: red;">*</span></label>
+                            <input type="text" ng-model="Email" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Pan Card <span style="color: red;">*</span></label>
+                            <input type="text" ng-model="pan" style="text-transform:uppercase"  class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>DOB <span style="color: red;">*</span></label>
+                            <input type="date" ng-model="DOB" class="form-control" required="required">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Aadhar </label>
+                            <input type="text" ng-model="aadhar" class="form-control">
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Companies </label>
+                            <input type="text" ng-model="company" class="form-control">
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="col-sm-4 align-self-center">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" ng-model="Internal" class="custom-control-input" id="switch1">
+                            <label class="custom-control-label" for="switch1">Search Internal Candidates</label>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-4 align-self-center">
+                        <button type="reset" ng-click="resetform()" class="btn btn-outline-primary mr-2">Clear Filter</button>
+                        <button  ng-click="CandidateSearch()" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <div class="dashboardGridContainer" id="SearchList" style="margin-top:50px;display: none;">
+
+            <div class="row">
+                <div class="col-sm-12" ng-init="">
+                    <h1>Search Summary</h1>
+                </div>
+            </div>
+
+            <div id="scrollTable">
+                <table class="themeTable" st-table="emptydata" style="width: 100%" st-safe-src="CandidatesearchList" class="table table-striped table-bordered">
+                    <tr style="text-align: center;">
+                        <th width="18%">Name</th>
+                        <th width="13%">City</th>
+                        <th width="12%">PAN No.</th>
+                        <th width="10%">DOB</th>
+                        <th width="15%">Mobile Number</th>
+                        <th width="10%">Total Offers</th>
+                        <th width="10%">Offer Date</th>
+                        <th width="7%">Action</th>
+                    </tr>
+                    <tr ng-repeat="Name in emptydata">
+                        <td>
+                            {{Name.FirstName.concat(" ").concat(Name.LastName)}}
+                        </td>
+                        <td>{{Name.CityName}}</td>
+
+                        <td>
+                            {{Name.PAN}}
+                        </td>
+                        <td>{{Name.DOB | date : "dd-MM-y"}}</td>
+                        <td>{{Name.Mobile1}}</td>
+                        <td>
+                            {{Name.totaloffers}}
+                        </td>
+                        <td>
+                            {{Name.LastOfferDate}}
+                        </td>
+                        <td>
+                            <!-- <a href="candidateedit.html" class="mr-2"><img src="images/edit.svg" alt=""></a> -->
+                            <a href="javascript:;" title="View Candidate" ng-click="Preview_Candidate(Name.Id)" class="mr-2"><img src="images/view.svg" alt=""></a>
+                        </td>
+
+                    </tr>
+                    <tfoot ng-show="CandidatesearchList.length >10">
+                        <tr>
+                            <td colspan="35" class="text-center">
+                                <items-page items-On-Page ="itemsOnPage" total-Items="CandidatesearchList.length"></items-page> items per page
+                                <div st-items-by-page="itemsOnPage" style="margin-left: 35%;margin-top: 20px;" st-page-change="rembemberCurrentPage(newPage)" st-pagination="" st-template="views/pagination.custom.html"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,160 @@
+    <section class="dataContainer">
+
+        <div class="dataSection">
+
+            <div class="dashboardGridContainer">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>User</h1>
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-end">
+                        <a ng-click="UserAdd_Edit()" class="btn btn-primary"><span>Save</span> </a>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <div class="col-sm-12">
+                        <ul class="tabs">
+                            <li>
+                                <a class="activeTab" href="javascript:;" data-target="basic">Basic Info</a>
+                            </li>
+                            
+                            <!-- <li>
+                                <a href="javascript:;" data-target="contact">contact Details</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" data-destination="basic">
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Company <span style="color:red;">*</span></label>
+                            <select ng-model="CompanyId" class="form-control">
+                                <option value="" selected>Select Company </option>
+                                <option ng-repeat="sel in CompanyList" ng-selected="CompanyList==sel.Id" value="{{sel.Id}}">{{sel.Name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Name <span style="color:red;">*</span></label>
+                            <input type="text" ng-model="Name" class="form-control" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>User Name <span style="color:red;">*</span></label>
+                            <input type="text" ng-model="UserName" placeholder="Username" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Password <span style="color:red;">*</span></label>
+                            <input type="password" ng-model="Password" placeholder="Password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Is Admin <span style="color:red;">*</span></label>
+                            <select ng-model="Admin" class="form-control">
+                                <option value="" selected>Select Permission</option>
+                                <option value="Y">Yes</option>
+                                <option value="N">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Designation</label>
+                            <input type="text" ng-model="Designation" placeholder="Designation" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Department</label>
+                            <input type="text" ng-model="Department" placeholder="Department" class="form-control">
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>PAN</label>
+                            <input type="text" ng-model="PAN" placeholder="PAN" class="form-control">
+                        </div>
+                    </div>     -->
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Mobile</label>
+                            <input type="text" ng-model="Mobile" placeholder="Mobile" class="form-control" maxlength="10" pattern="\d{10}">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Email <span style="color:red;">*</span> </label>
+                            <input type="email" ng-model="Email" placeholder="Email" class="form-control">
+                        </div>
+                    </div>            
+                </div>
+               
+                <!-- <div class="row" data-destination="contact" style="display: none;">
+
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address Line 1</label>
+                            <input type="text" ng-model="Address1" placeholder="Door No./Floor/Building" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Address Line 2</label>
+                            <input type="text" ng-model="Address2" placeholder="Area" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Country </label>
+                            <select ng-model="Country" class="form-control" ng-change="StateBasedOnCountry()">
+                                <option value="" selected>Select Country</option> 
+                                <option ng-repeat="sel in CountryList" ng-selected="CountryList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>State </label>
+                            <select ng-model="State" class="form-control" ng-change="CityBasedOnState()">
+                                <option value="" selected>Select State </option>
+                                <option ng-repeat="sel in StateList" ng-selected="StateList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>City </label>
+                            <select ng-model="City" class="form-control">
+                                <option value="" selected>Select City </option>
+                                <option ng-repeat="sel in CityList" ng-selected="CityList==sel.id" value="{{sel.id}}">{{sel.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="inputGroup">
+                            <label>Pincode</label>
+                            <input type="text" ng-model="Pincode" placeholder="Pincode" class="form-control">
+                        </div>
+                    </div>           
+                </div> -->
+               
+            </div>
+    </section>
+    <script>
+        $(function () {
+            $('.tabs li a').click(function () {
+            $('.tabs li a').removeClass('activeTab');
+            $(this).addClass('activeTab');
+            $('[data-destination]').hide();
+            $(`[data-destination="${$(this).attr('data-target')}"]`).show();
+
+
+
+    })
+    })
+    </script>

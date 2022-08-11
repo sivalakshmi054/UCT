@@ -1,0 +1,160 @@
+<section class="dataContainer">
+
+    <div class="dataSection">
+
+        <div class="dashboardGridContainer"  ng-init="CandidateDetails()">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Add Candidate Offer - {{FirstName}}</h1>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-end">
+                    <a ng-click="Add_CandidateOffer()" class="btn btn-primary"><span>Save</span> </a>
+                </div>
+            </div>
+            <div class="row mb-3 mt-3">
+                <div class="col-sm-12">
+                    <ul class="tabs">
+                        <li>
+                            <a class="activeTab" href="javascript:;" data-target="offers">Offer Details</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" data-target="basic">Basic Info</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row" data-destination="offers">
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Company Name <span style="color:red;">*</span></label>
+                        <input type="text" ng-model="Id" value="{{Id}}" class="form-control" hidden>
+                        <select ng-model="CompanyName" class="form-control">
+                            <option value="" selected>Select Company </option>
+                            <option ng-repeat="sel in CompanyList" ng-selected="CompanyList==sel.Id" value="{{sel.Id}}">{{sel.Name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Location </label>
+                        <input type="text" ng-model="Location" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Position</label>
+                        <input type="text" ng-model="Position" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>CTC Expected<span style="color:red;">*</span></label>
+                        <input type="text" ng-model="CTCexpectedasked" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Offer Date<span style="color:red;">*</span></label>
+                        <input type="date" ng-model="OfferDate" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Expected Start Date<span style="color:red;">*</span></label>
+                        <input type="date" ng-model="ExpectedStartDate" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Probability of Joining</label>
+                        <input type="text" ng-model="Probabilityofjoining" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>HR Prediction</label>
+                        <input type="text" ng-model="HRPrediction" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-destination="basic" style="display: none;">
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>First Name <span style="color:red;">*</span></label>
+                        <div class="form-control">{{FirstName}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Last Name</label>
+                        <div class="form-control">{{LastName}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Pan Number <span style="color:red;">*</span></label>
+                        <div class="form-control">{{PAN}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Adhar Number</label>
+                        <div class="form-control">{{Aadhar}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>DOB <span style="color:red;">*</span></label>
+                        <div class="form-control">{{DOB | date:'d-MM-y'}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Age </label>
+                        <div class="form-control">{{Age}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4 align-self-center">
+                    <div class="inputGroup">
+                        <label class="mr-3">Gender</label>
+                        <div class="form-control">{{GenderName}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Mobile-1 <span style="color:red;">*</span> </label>
+                        <div class="form-control">{{Mobile1}}</div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="inputGroup">
+                        <label>Email Id - 1 <span style="color:red;">*</span></label>
+                        <div class="form-control">{{EmailId1}}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('.tabs li a').click(function () {
+        $('.tabs li a').removeClass('activeTab');
+        $(this).addClass('activeTab');
+        $('[data-destination]').hide();
+        $(`[data-destination="${$(this).attr('data-target')}"]`).show();
+
+
+
+})
+})
+</script>
+
+
+
+
